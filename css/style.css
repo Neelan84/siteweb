@@ -398,6 +398,53 @@ h2 {
     font-weight: 700;
 }
 
+.collectif {
+    background: white;
+    color: var(--text);
+}
+
+.collectif h2 {
+    color: var(--primary);
+}
+
+.collectif-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.collectif-photo {
+    width: 100%;
+}
+
+.collectif-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+.collectif-text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.collectif-text li {
+    padding: 0.7rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #636e72;
+}
+
+.collectif-text li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 700;
+}
+
 .equipe {
     background: white;
     color: var(--text);
@@ -739,6 +786,7 @@ footer {
     }
 
     .vision-grid,
+    .collectif-content,
     .equipe-content,
     .contact-wrapper {
         grid-template-columns: 1fr;
