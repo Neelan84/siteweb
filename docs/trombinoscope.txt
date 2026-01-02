@@ -1,0 +1,4 @@
+Chaque candidat est présenté dans un format carte (card) avec photo, nom, âge, profession. Au clic ou au survol, la carte se déploie pour révéler le discours complet du candidat.
+
+
+

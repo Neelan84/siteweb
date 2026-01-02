@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.programme-card, .actu-card, .stat-card').forEach((el, i) => {
+    document.querySelectorAll('.programme-card, .actu-card, .stat-card, .trombinoscope-card').forEach((el, i) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = `all 0.6s ease ${i * 0.1}s`;
@@ -50,4 +50,139 @@ document.addEventListener('DOMContentLoaded', function() {
         
         lastScroll = currentScroll;
     });
+
+    // Trombinoscope
+    const trombinoscopeData = [
+        { 
+            photo: 'photos/emilie.jpeg', 
+            text: 'Emilie BOISMAL - 45 ans - Assistante familiale.\nYvelinoise depuis toujours, j\'habite à Condé-sur-Vesgre depuis 14 ans. J\'y ai construit ma vie et je suis profondément attachée à mon village et à sa forêt, que je parcours quotidiennement.\nMon engagement professionnel et associatif m\'a appris le sens des responsabilités, de l\'écoute et du collectif. J\'ai rejoint ce projet, convaincue que la politique locale peut se mener autrement : avec de la présence, du dialogue et beaucoup de bon sens.\n« Je crois que Condé possède déjà tout ce dont on a besoin. Mon envie est simple : aider à révéler ces richesses et les mettre en valeur, avec les habitants, pour l\'avenir du village. »'
+        },
+        { 
+            photo: 'photos/luc.jpeg', 
+            text: 'Luc Régal - 37 ans - Responsable grands comptes dans une entreprise d\'optimisation de la performance financière.\nInstallé en famille à Condé-sur-Vesgre depuis bientôt 4 ans, je suis convaincu que l\'action politique locale ne doit pas appartenir qu\'à un cercle fermé. Nous sommes tous responsables de l\'avenir de notre commune.\nCe qui me pousse à agir, c\'est la diversité de cette équipe où chacun apporte ses idées et valeurs. Ensemble, nous sommes motivés pour défendre les intérêts de notre village et renforcer l\'attachement de tous à Condé-sur-Vesgre.\nDans mon métier, l\'écoute, l\'endurance et la capacité à construire des relations durables sont des qualités qui font la différence dans un milieu concurrentiel voire hostile. Ces atouts seront également précieux pour notre village.\n« J\'aimerais que chaque Condéen puisse trouver dans notre démarche une oreille attentive, un conseil avisé, une vision rassurante ou la main tendue dont il a besoin. »'
+        },
+        { 
+            photo: 'photos/sandrine.jpeg', 
+            text: 'Sandrine DROZDOWSKI - 51 ans - responsable RH à la "Maison des Sages", association spécialisée dans les habitats partagés pour les personnes atteintes de la maladie d\'Alzheimer.\nMaman de deux jeunes adultes et d\'un adolescent de 13 ans, j\'habite à Condé sur Vesgre depuis dix ans maintenant et je participe activement à la vie associative de la commune en tant que secrétaire et coach au club de football du village, ainsi que bénévole au comité des fêtes.\nJ\'ai rejoint une équipe dont la vision est proche de la mienne : avancer ensemble pour les Condéens, dans un esprit de transparence, d\'écoute et de communication, des valeurs qui guident mon engagement au quotidien.\n« Agir plutôt que critiquer et construire ensemble l\'avenir de notre commune. »'
+        },
+        { 
+            photo: 'photos/olivier.jpeg', 
+            text: 'Olivier DERBESSE - 46 ans - Directeur Informatique au sein d\'une collectivité territoriale. \nEngagé depuis toujours pour le droit commun (ex-président des Représentants des Parents d\'Elèves du Collège de Houdan), j\'ai rejoint une équipe de Condéens motivés, sans étiquette, qui veulent simplement faire vivre notre village.\nMes atouts ? Pas un politique, mais un représentant impartial, à l\'écoute de tous. Mon expérience associative m\'a appris à agir concrètement pour le lien social.\n« La politique vous éloigne ? Nous, on la rapproche. Rejoignez une liste transparente, citoyenne et tournée vers l\'action – pour Condé, par les Condéens.» '
+        },
+        { 
+            photo: 'photos/karine.jpeg', 
+            text: 'Karine RAMAGE - 55 ans - Conseil en affaires et gestion et impliquée dans des projets sportifs équestres.\nInstallée à Condé depuis 4 ans. J\' ai choisi ce village pour son calme, sa ruralité et sa nature. Ce cadre est un bien précieux à préserver.\nAprès 25 années dans des secteurs exigeants (centrale d\'achats grande distribution et industrie pharma), j\'ai acquis la culture du service clients/patients et du résultat. Mon parcours a été axé sur la coordination entre les structures décisionnelles et le terrain. \nC est précisément cette vision que je souhaite impulser. Être à l\'écoute des besoins des condéens et s\'assurer que les décisions y répondent avec justesse et efficacité.\nJ\'ai rejoint cette liste car elle place le tissu associatif et solidaire au coeur de son projet, avec une approche pragmatique : chercher des solutions plutôt que d\'imposer des dogmes.\nMon parcours m\'a appris qu\'une bonne idée n\'est rien sans une exécution efficiente. \nMa devise inspirée de la culture équestre : "Calme en avant, droit".'
+        },
+        { 
+            photo: 'photos/jeanpierre.jpeg', 
+            text: 'Jean-Pierre DUVAL - 68 ans - Cadre retraité de l\'Education Nationale. Ancien coordonnateur départemental des Yvelines pour la scolarisation des élèves handicapés.\nCondéen depuis 40 ans déjà ! Depuis ce jour de mai 1985 où, mon épouse et moi-même nous sommes littéralement tombés sous le charme de Condé, de son environnement rural et de ses paysages forestiers clairsemés de rhododendrons en fleurs. Mes enfants puis mes petits-enfants y ont grandi heureux.\nDurant toutes ces années j\'ai pu y rencontrer de magnifiques personnes. Avec certaines d\'entre elles, j\'ai co-animé, durant 8 années durant, le Comité des fêtes puis j\'ai participé, à deux reprises, à la gestion de Condé, comme conseiller municipal d\'abord puis comme premier adjoint ensuite. C\'était il y a quelques années …\nRécemment , lors d\'échanges avec des membres du collectif «  Condé c\'est nous tous » j\'ai pu partagé leurs analyses des besoins et des aspirations des Condéens et leur volonté collective d\'œuvrer pour le seul intérêt général. C\'est la raison pour laquelle j\'ai décidé, enthousiaste,  de rejoindre la liste « Tous Condéens ! ».\n« Je mesure la responsabilité qui est la nôtre afin que tous ensemble nous construisions  le Condé préservé et créatif que vous attendez. »'
+        },
+        { 
+            photo: 'photos/emmanuelle.jpeg', 
+            text: 'Emmanuelle JEUFFROY - 50 ans - Pilote Sécurité et Environnement dans le monde de l\'Industrie automobile. \nMaman de 2 ados et aidante familiale, j\'ai été Représentante des Parents d\'Elèves sur les écoles du territoire. Mes responsabilités à la fois personnelles et professionnelles m\'ont appris à être à l\'écoute, bienveillante, empathique, à avoir le sens des priorités et gérer les situations d\'urgence. \nCondéenne depuis 3 ans et demi, et auparavant Adainvilloise pendant 12 ans, je rejoins la liste "Tous Condéens !" pour ses valeurs humaines et son esprit collectif qui a pour volonté de construire un avenir transparent et bienveillant pour la commune et où chaque génération trouvera sa place. \n« Envie d\'un engagement local basé sur votre vécu et vos besoins, rejoignez-nous ! Votre parole compte ! »'
+        },
+        { 
+            photo: 'photos/alexandre.jpeg', 
+            text: 'Alexandre PONCHON - 34 ans - Géomètre-géomaticien.\nAncien Représentant des Parents d\'Elèves au Conseil d\'Ecole, mon parcours professionnel m\'a amené à travailler au sein de plusieurs collectivités de taille importante. Je me suis engagé auprès de cette liste car je souhaite participer au changement dont a besoin Condé et que cette liste peut amener. \nJ\'apporte ma rigueur, mes qualités d\'analyste ainsi que mon expérience au sein des collectivités.\n« Faites nous confiance pour votre avenir, nous souhaitons la même chose que vous : vivre encore mieux tout en gardant notre cadre de vie. »'
+        },
+        { 
+            photo: 'photos/sandrinemaillard.jpeg', 
+            text: 'Sandrine MAILLARD - 48 ans - Assistante commerciale.\nJ\'ai rejoint cette liste parce qu\'elle est sans étiquette, à l\'écoute des habitants et tournée vers l\'action. J\'apprécie particulièrement l\'esprit collectif qui anime cette équipe : des personnes accessibles, sincères et motivées par l\'intérêt général.\nCondéenne depuis plus de 20 ans, j\'ai le sens de la collectivité, je crée facilement du lien avec les autres et j\'aime m\'impliquer dans les projets communs.\n « Une commune qui se construit avec ses habitants, dans l\'écoute et l\'action. »'
+        },
+        { 
+            photo: 'photos/matthieu.jpeg', 
+            text: 'Matthieu JOCK - 42 ans - Enseignant en électrotechnique. \nPapa de deux enfants (13ans et 5 ans) et Condéen depuis 12 ans, j\'ai intégré la liste pour participer aux différents projets d\'évolutions de la commune. \nConscient des implications et de l\'investissement que cet engagement nécessite. Je serai honoré de pouvoir mettre à contribution mes compétences techniques. Pouvoir développer des idées qui améliorent Condé-sur-Vesgre est devenu primordial pour tous les citoyens de cette commune. \nRejoindre "Tous condéens" ce collectif engagé et responsable qui se rassemble pour faire bouger les choses est venu comme une évidence. Participer à ce mouvement solidaire est fondamental pour se faire entendre. Un collectif qui se mobilise pour répondre aux questions, projets, besoins de la population condéenne. \n« Concrétiser aujourd\'hui, c\'est à mon sens, agir pour demain. Parce que, Condé, c\'est nous tous ! »'
+        },
+        { 
+            photo: 'photos/laureline.jpeg', 
+            text: 'Laureline RIGAUT - 37 ans - Assistante maternelle sur la commune.\nAncienne Représentante des Parents d\'Elèves au Conseil d\'Ecole, j\'estime être généreuse, empathique et à l\'écoute.\nJ\'ai rejoint la liste "Tous Condéens" car cette liste est composée de personnes d\'expérience qui aiment leur village tout comme moi. Elle est née des habitants eux-mêmes et pas d\'une seule personne ; c\'est pour moi la façon la plus juste de vous représenter chers Condéens. Cette liste reste soutenue par son collectif qui représente un vivier de compétences et une vraie  force ! \n« Pour ensoleiller notre village pour toutes les générations, nous aurons besoin de vous ! Un village qui rassemble est un village heureux ! »'
+        },
+        { 
+            photo: 'photos/sebastien.jpeg', 
+            text: 'Sébastien DROZDOWSKI - 48 ans - Responsable commercial France dans le secteur de la métallurgie.\nEngagé dans la vie locale, je suis trésorier et coach de l\'AS Vesgre Football, ainsi que bénévole au comité des fêtes. Ces activités ont forgé en moi l\'esprit d\'équipe, de service et de convivialité.\nJ\'ai choisi de rejoindre cette liste car je partage ses valeurs : confiance, dialogue et engagement dans une véritable cohésion.\n« Rassemblons-nous et avançons ensemble pour l\'avenir de notre commune ! »'
+        },
+        { 
+            photo: 'photos/mounia.jpeg', 
+            text: 'Mounia BOUDEDJA - 45 ans - Diplômée du secteur social et ancienne dirigeante d\'un club du troisième âge, actuellement en poste de chargé d\'événementiel \nJe suis installée  sur la commune depuis neuf ans. \nBienveillante et dévouée, j\'ai rejoint la liste: « Tous Condéens ! » car cette liste est composée de personnes intègres, fiables, respectant les principes moraux et priorisant  les intérêts de la communauté et des habitants. \nJe souhaite m\'investir pour notre commune et participer à son développement\n« Nos atouts sont les vôtres. Condé sur Vesgre regorge de valeurs inexploitées, développons les ensemble ! »'
+        },
+        { 
+            photo: 'photos/quentin.jpeg', 
+            text: 'Quentin E. - 35 ans - Policier en région parisienne depuis 11 ans et spécialisé dans la police de l\'autoroute et du routier depuis deux ans. \nInstallé depuis 4 ans à Condé, où nous avons choisi de fonder notre famille. \nJ\'ai rejoint le collectif puis la liste pour dynamiser le village avec toutes les bonnes âmes qui souhaitent faire bouger les choses et donner un nouveau souffle à un village qui, comme on a tous pu le constater pendant les fêtes, manque de couleurs et de moments de convivialité. \nC\'est une démarche sans étiquette politique car le but c\'est d\'aller tous dans le même sens pour que les habitants soient fiers de leur commune, qu\'ils s\'y sentent bien et en sécurité. \nCe qui me motive ce sont toutes les idées qui viennent du vécu de chacun qui va permettre de mener à bien la mission qui va nous être confiée j\'en suis certain. \nLe travail en équipe est la base de mon métier, le collectif c\'est ce qui permet d\'atteindre un but précis, chaque avis doit être écouté équitablement et de façon impartiale. \n« Tous Condéens !, c\'est une équipe de Condéen(ne)s motivés derrière une tête de liste qui a de l\'expérience au sein des associations locales et qui va œuvrer dans l\'intérêt commun des habitants de notre petite commune tout en conservant le charme du village qui nous a fait choisir Condé comme résidence. »'
+        },
+        { 
+            photo: 'photos/ana.jpeg', 
+            text: 'Ana PEREIRA-CRAVO - 57 ans - Responsable régionale dans l\'archivage.\nJ\'ai rejoint ce collectif par conviction,  persuadée que la transparence,  le dialogue,  le partage et l\'écoute sont indispensables à l\'avenir de notre village.\nBien que novice sur une liste électorale,  je crois fermement que nous TOUS pouvons faire la différence,  portés par une motivation collective plutôt que des intérêts individuels. \n«  Ensemble on va plus loin. »'
+        },
+        { 
+            photo: 'photos/oleg.jpeg', 
+            text: 'Oleg LODYGENSKY - 57 ans - Ingénieur de recherche en informatique et directeur technique. \nJe suis à Condé depuis 4 ans. Depuis des années, je participe régulièrement à des activités sociales et associatives. \nJ\'aime le partage d\'idées et c\'est à ce titre que je me suis intéressé au collectif "Tous Condéens ! » : j\'y trouve l\'envie de créer et de mettre en oeuvre l\'intelligence collective, la volonté de faire bouger les choses et une moyenne d\'âge inférieure à 50 ans. Tout ça me parait de très bon augure et me pousse à me présenter comme conseiller sur la liste "tous Condéens"'
+        }
+    ];
+
+    const trombinoscopeGrid = document.getElementById('trombinoscope-grid');
+    const modal = document.getElementById('person-modal');
+    const modalPhoto = document.getElementById('modal-photo');
+    const modalText = document.getElementById('modal-text');
+    const modalClose = document.querySelector('.modal-close');
+
+    // Fonction pour extraire le premier paragraphe
+    function getFirstParagraph(text) {
+        const paragraphs = text.split('\n').filter(p => p.trim().length > 0);
+        return paragraphs.length > 0 ? paragraphs[0] : text;
+    }
+
+    // Fonction pour formater le texte complet
+    function formatFullText(text) {
+        const paragraphs = text.split('\n').filter(p => p.trim().length > 0);
+        return paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+    }
+
+    // Créer les cartes
+    function loadTrombinoscope() {
+        trombinoscopeData.forEach((person, index) => {
+            const firstParagraph = getFirstParagraph(person.text);
+
+            const card = document.createElement('div');
+            card.className = 'trombinoscope-card';
+            card.innerHTML = `
+                <img src="${person.photo}" alt="">
+                <div class="trombinoscope-card-content">
+                    <p>${firstParagraph}</p>
+                </div>
+            `;
+
+            // Ajouter l'événement de clic
+            card.addEventListener('click', () => {
+                modalPhoto.src = person.photo;
+                modalPhoto.alt = '';
+                modalText.innerHTML = formatFullText(person.text);
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+
+            trombinoscopeGrid.appendChild(card);
+            
+            // Appliquer l'animation
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.6s ease ${index * 0.05}s`;
+            observer.observe(card);
+        });
+    }
+
+    // Fermer la modal
+    modalClose.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Charger le trombinoscope
+    loadTrombinoscope();
 });
