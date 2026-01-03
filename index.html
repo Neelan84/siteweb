@@ -57,14 +57,13 @@
         </div>
         <button class="menu-toggle" id="menuToggle">☰</button>
         <ul id="navMenu">
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#collectif">Collectif</a></li>
-            <li><a href="#trombinoscope">Trombinoscope</a></li>
-            <li><a href="#vision">Notre Vision</a></li>
+            <li><a href="#accueil">ACCUEIL</a></li>
+            <li><a href="#collectif">LE COLLECTIF</a></li>
+            <li><a href="#vision">NOTRE VISION</a></li>
             <li class="logo-nav"><a href="#accueil"><img src="logo.png" alt="Logo"></a></li>
-            <li><a href="#programme">Programme</a></li>
-            <li><a href="#equipe">L'Équipe</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#programme">NOTRE PROGRAMME</a></li>
+            <li><a href="#equipe">LA LISTE</a></li>
+            <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
 </header>
@@ -110,28 +109,6 @@
     </div>
 </section>
 
-<section id="trombinoscope">
-    <div class="container">
-        <h2>Trombinoscope</h2>
-        <p class="section-intro">Découvrez les membres de notre équipe</p>
-        
-        <div class="programme-grid" id="trombinoscope-grid">
-            <!-- Les cartes seront générées par JavaScript -->
-        </div>
-    </div>
-</section>
-
-<!-- Modal pour afficher le profil complet -->
-<div id="person-modal" class="modal">
-    <div class="modal-content">
-        <span class="modal-close">&times;</span>
-        <div class="modal-body">
-            <img id="modal-photo" src="" alt="">
-            <div id="modal-text"></div>
-        </div>
-    </div>
-</div>
-
 <section id="vision" class="vision">
     <div class="container">
         <div class="vision-grid">
@@ -161,7 +138,7 @@
 
 <section id="programme">
     <div class="container">
-        <h2>Nos 3 Priorités</h2>
+        <h2>Notre Programme</h2>
         <p class="section-intro">Des engagements concrets pour transformer notre commune</p>
         
         <div class="programme-grid">
@@ -197,18 +174,9 @@
                     <li>Faciliter la vie des plus fragiles par un accompagnement de proximité</li>
                 </ul>
             </div>
-        </div>
-    </div>
-</section>
-
-<section id="filsrouges">
-    <div class="container">
-        <h2>Nos 2 Fils Rouges</h2>
-        <p class="section-intro">Des principes qui guident toutes nos actions</p>
-        
-        <div class="programme-grid">
+            
             <div class="programme-card">
-                <div class="card-number">01</div>
+                <div class="card-number">04</div>
                 <h3>Sérénité budgétaire : Dépenser juste, investir utile</h3>
                 <p style="margin-bottom: 1.5rem; color: #636e72; font-style: italic;">Une gestion rigoureuse et responsable de l'argent public :</p>
                 <ul>
@@ -219,7 +187,7 @@
             </div>
             
             <div class="programme-card">
-                <div class="card-number">02</div>
+                <div class="card-number">05</div>
                 <h3>Communication & transparence : Une mairie qui informe, qui écoute, qui répond</h3>
                 <p style="margin-bottom: 1.5rem; color: #636e72; font-style: italic;">Parce qu'une mairie proche, c'est une mairie claire et accessible :</p>
                 <ul>
@@ -230,15 +198,8 @@
                 </ul>
             </div>
         </div>
-    </div>
-</section>
-
-<section id="valeurs">
-    <div class="container">
-        <h2>Nos 5 Valeurs</h2>
-        <p class="section-intro">Les principes fondamentaux qui nous guident</p>
         
-        <div style="display: flex; justify-content: center; margin-top: 3rem;">
+        <div style="display: flex; justify-content: center; margin-top: 4rem;">
             <img src="docs/valeurs.jpg" alt="Nos 5 valeurs" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
         </div>
     </div>
@@ -279,28 +240,27 @@
     </div>
 </section>
 
-<section id="actualites" class="actualites">
+<section id="liste">
     <div class="container">
-        <h2>Actualités</h2>
-        <div class="actu-grid">
-            <div class="actu-card">
-                <div class="actu-date">À venir</div>
-                <h4>Réunion publique</h4>
-                <p>Venez échanger avec nous sur nos propositions pour la commune</p>
-            </div>
-            <div class="actu-card">
-                <div class="actu-date">En cours</div>
-                <h4>Porte-à-porte</h4>
-                <p>Notre équipe va à votre rencontre dans tous les quartiers</p>
-            </div>
-            <div class="actu-card">
-                <div class="actu-date">Permanent</div>
-                <h4>Permanences</h4>
-                <p>Retrouvez-nous chaque semaine pour échanger</p>
-            </div>
+        <h2>Trombinoscope</h2>
+        <p class="section-intro">Découvrez les membres de notre équipe</p>
+        
+        <div class="programme-grid" id="trombinoscope-grid">
+            <!-- Les cartes seront générées par JavaScript -->
         </div>
     </div>
 </section>
+
+<!-- Modal pour afficher le profil complet -->
+<div id="person-modal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="modal-body">
+            <img id="modal-photo" src="" alt="">
+            <div id="modal-text"></div>
+        </div>
+    </div>
+</div>
 
 <section id="contact" class="contact">
     <div class="container">
