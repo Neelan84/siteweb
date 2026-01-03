@@ -144,8 +144,8 @@ nav a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("1000109430.jpg") center/cover;
-    opacity: 0.15;
+    background: url("../photos/fond_prairie.jpg") center/cover;
+    opacity: 0.25;
 }
 
 .hero-content {
