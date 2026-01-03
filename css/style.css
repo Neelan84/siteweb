@@ -88,6 +88,7 @@ nav ul {
     list-style: none;
     gap: 2rem;
     align-items: center;
+    margin-left: 90px; /* Espace pour les icônes sociales (2 icônes de 36px + gap) */
 }
 
 .logo-nav {
@@ -890,6 +891,7 @@ footer {
         background: white;
         flex-direction: column;
         padding: 2rem;
+        margin-left: 0; /* Reset de la marge sur mobile */
         display: none;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
