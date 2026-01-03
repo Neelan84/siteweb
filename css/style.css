@@ -600,6 +600,17 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+	pointer-events: auto;
+}
+
+.method a.contact-email {
+    display: inline !important;
+    width: auto !important;
+    max-width: fit-content;
+}
+
+.method *:not(a) {
+    pointer-events: auto;
 }
 
 .method strong {
@@ -812,6 +823,18 @@ footer {
     animation: modalFadeIn 0.3s;
 }
 
+.modal-content_mention{
+	background-color: white;
+    margin: 5% auto;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    position: relative;
+    animation: modalFadeIn 0.3s;
+	padding: 2.5rem 3rem; /* ↑ plus d’espace à gauche/droite */
+}
+
 @keyframes modalFadeIn {
     from {
         opacity: 0;
@@ -1015,4 +1038,9 @@ footer {
 /* Texte aligné */
 .checkbox-group span {
   line-height: 1.4;
+}
+
+.contact-email {
+    display: inline;       /* le lien ne prend que la largeur du texte */
+    pointer-events: auto;
 }

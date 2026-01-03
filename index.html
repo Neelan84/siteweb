@@ -315,7 +315,9 @@
                 <div class="contact-methods">
                     <div class="method">
                         <strong>Email</strong>
-                        <span>tous.condeens@gmail.com</span>
+                        <a href="mailto:tous.condeens@gmail.com" class="contact-email">
+							tous.condeens@gmail.com
+						</a>
                     </div>
                     <div class="method">
                         <strong>Réseaux sociaux</strong>
@@ -352,26 +354,6 @@
 
                     <button type="submit" class="btn-submit">Envoyer le message</button>
                 </form>
-				<!--
-				<form action="https://formspree.io/f/xwpgjolq" method="POST">
-					  <input type="text" name="_gotcha" style="display:none">
-					  <input type="hidden" name="_subject" value="Nouveau message – Condé 2026">
-					  <input type="hidden" name="_redirect" value="https://tous-condeens.fr/merci.html">
-
-					  <div class="form-row">
-						<input type="text" name="nom" placeholder="Votre nom" required>
-						<input type="email" name="email" placeholder="Votre email" required>
-					  </div>
-
-					  <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
-
-					  <label>
-						<input type="checkbox" required>
-						J’accepte que mes données soient utilisées pour être recontacté(e).
-					  </label>
-
-					  <button type="submit">Envoyer le message</button>
-				</form>		-->	
             </div>
         </div>
     </div>
@@ -393,11 +375,69 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Condé-Sur-Vesgre - Liste citoyenne</p>
+			<p><a href="#" id="open-legal">Mentions légales</a></p>
         </div>
     </div>
 </footer>
 
 <script src="js/main.js"></script>
+
+<!-- Modal Mentions légales -->
+<div id="legal-modal" class="modal">
+    <div class="modal-content_mention">
+        <span class="modal-close" id="close-legal">&times;</span>
+        <h2>Mentions légales</h2>
+
+			<p><strong>Éditeur du site</strong><br>
+			Collectif citoyen « Condé-sur-Vesgre, c’est nous tous »<br>
+			Commune de Condé-sur-Vesgre – France</p>
+
+			<p><strong>Nature du site</strong><br>
+			Site d’information et de communication relatif à une démarche citoyenne
+			dans le cadre des élections municipales de 2026.</p>
+
+			<p><strong>Responsable de la publication</strong><br>
+			Le collectif citoyen « Condé-sur-Vesgre, c’est nous tous »</p>
+
+			<p><strong>Hébergement</strong><br>
+			Netlify, Inc.<br>
+			2325 3rd Street, Suite 296<br>
+			San Francisco, California 94107 – USA<br>
+			Site : https://www.netlify.com</p>
+
+			<p><strong>Contact</strong><br>
+			Email : tous.condeens@gmail.com</p>
+
+			<p><strong>Données personnelles</strong><br>
+			Les données personnelles collectées via le formulaire de contact
+			(nom, adresse email, message) sont utilisées uniquement
+			pour répondre aux demandes des utilisateurs et permettre un échange
+			dans le cadre de la démarche citoyenne.</p>
+
+			<p>
+			Ces données ne sont ni vendues, ni cédées, ni transmises à des tiers.
+			Elles sont conservées pour une durée strictement nécessaire au traitement
+			des demandes.
+			</p>
+
+			<p>
+			Conformément au Règlement Général sur la Protection des Données (RGPD),
+			vous disposez d’un droit d’accès, de rectification et de suppression
+			des données vous concernant.
+			Toute demande peut être adressée par email à l’adresse indiquée ci-dessus.
+			</p>
+
+			<p><strong>Cookies</strong><br>
+			Ce site n’utilise pas de cookies de suivi ou de mesure d’audience.
+			Aucun cookie publicitaire n’est déposé.</p>
+
+			<p><strong>Propriété intellectuelle</strong><br>
+			L’ensemble des contenus présents sur ce site (textes, images, graphismes,
+			logos) est la propriété du collectif citoyen, sauf mention contraire.
+			Toute reproduction ou utilisation sans autorisation est interdite.</p>
+
+    </div>
+</div>
 
 </body>
 </html>

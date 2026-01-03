@@ -198,4 +198,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Charger le trombinoscope
     loadTrombinoscope();
+	
+	
+	
+	// Mentions légales
+		const openLegal = document.getElementById("open-legal");
+		const legalModal = document.getElementById("legal-modal");
+		const closeLegal = document.getElementById("close-legal");
+
+		if (openLegal) {
+			openLegal.addEventListener("click", function (e) {
+				e.preventDefault();
+				legalModal.style.display = "block";
+			});
+		}
+
+		if (closeLegal) {
+			closeLegal.addEventListener("click", function () {
+				legalModal.style.display = "none";
+			});
+		}
+
+		window.addEventListener("click", function (e) {
+			if (e.target === legalModal) {
+				legalModal.style.display = "none";
+			}
+		});
 });
