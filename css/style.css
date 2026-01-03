@@ -95,7 +95,11 @@ nav ul {
     margin: 0 1rem;
 }
 
-.logo-nav img {
+.logo-mobile {
+    display: none;
+}
+
+.logo-desktop img {
     height: 200px;
     width: auto;
 }
@@ -832,7 +836,7 @@ footer {
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     position: relative;
     animation: modalFadeIn 0.3s;
-	padding: 2.5rem 3rem; /* ↑ plus d’espace à gauche/droite */
+	padding: 2.5rem 3rem; /* → plus d'espace à gauche/droite */
 }
 
 @keyframes modalFadeIn {
@@ -906,6 +910,47 @@ footer {
 }
 
 @media (max-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .social-icons {
+        position: static;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .social-icons a {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo-desktop {
+        display: none;
+    }
+
+    .logo-mobile {
+        display: flex;
+        position: static;
+        margin: 0;
+        align-items: center;
+    }
+
+    .logo-mobile img {
+        height: 80px;
+        width: 50px;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 2rem;
+    }
+
     nav ul {
         position: absolute;
         top: 100%;
@@ -914,30 +959,13 @@ footer {
         background: white;
         flex-direction: column;
         padding: 2rem;
-        margin-left: 0; /* Reset de la marge sur mobile */
+        margin-left: 0;
         display: none;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
     nav ul.active {
         display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .social-icons {
-        order: 3;
-    }
-
-    .social-icons a {
-        width: 32px;
-        height: 32px;
-    }
-
-    .logo-nav {
-        display: none;
     }
 
     .hero {
