@@ -12,7 +12,20 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Pour "accueil", scroller tout en haut
+                if (this.getAttribute('href') === '#accueil') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
                 menu.classList.remove('active');
                 toggle.textContent = '☰';
             }
