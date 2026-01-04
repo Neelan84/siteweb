@@ -701,7 +701,7 @@ textarea {
 footer {
     background: linear-gradient(135deg, var(--dark) 0%, #0f172a 100%);
     color: white;
-    padding: 3rem 0 1.5rem;
+    padding: 2rem 0 1.5rem;
 }
 
 .footer-content {
@@ -709,7 +709,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -933,12 +933,13 @@ footer {
         display: none;
     }
 
-    .logo-mobile {
-        display: flex;
-        position: static;
-        margin: 0;
-        align-items: center;
-    }
+    @media (max-width: 768px) {
+  .logo-mobile {
+    display: flex;
+    align-items: center;     /* alignement vertical */
+    gap: 10px;               /* espace entre logo et texte */
+    justify-content: center; /* centre le groupe */
+  }
 
     .menu-toggle {
         display: block;
