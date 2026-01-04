@@ -940,11 +940,6 @@ footer {
         align-items: center;
     }
 
-    .logo-mobile img {
-        height: 80px;
-        width: 50px;
-    }
-
     .menu-toggle {
         display: block;
         position: absolute;
@@ -1072,3 +1067,24 @@ footer {
     display: inline;       /* le lien ne prend que la largeur du texte */
     pointer-events: auto;
 }
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-mobile img {
+  height: 60px;
+  width:auto;
+  transform: translateY(6px);
+}
+
+@media (min-width: 769px) {
+  .logo-mobile {
+    display: none;
+  }
+}
+
+
+
+
