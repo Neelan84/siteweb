@@ -701,7 +701,7 @@ textarea {
 footer {
     background: linear-gradient(135deg, var(--dark) 0%, #0f172a 100%);
     color: white;
-    padding: 2rem 0 1.5rem;
+    padding: 1rem 0 1.5rem;
 }
 
 .footer-content {
@@ -1076,7 +1076,7 @@ footer {
 
 .logo-mobile img {
   height: 60px;
-  width:auto;
+  width:60px;
   transform: translateY(6px);
 }
 
