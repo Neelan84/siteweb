@@ -43,6 +43,9 @@
 }
 </script>
 
+<!-- ✅ Suivi tracking users -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="3e744b34-f173-499c-be0a-100f8e0f43d1"></script>
+
 <body>
 
 <header>
@@ -317,14 +320,12 @@
                     <div class="form-group">
                         <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
                     </div>
-                    <!--<div class="form-group checkbox-group">
-					  <label>
-						<input type="checkbox" required>
-						<span>J’accepte que mes données soient utilisées pour être recontacté(e).</span>
-					  </label>
-					</div>-->
-
-
+					<div class="form-group">
+						<div style="display: flex; align-items: flex-start; gap: 12px;">
+							<input type="checkbox" id="consent" name="consent" required style="flex-shrink: 0; width: 18px; height: 18px; margin: 3px 0 0 0; padding: 0; cursor: pointer;">
+							<label for="consent" style="flex: 1; cursor: pointer; font-size: 0.95rem; line-height: 1.6; margin: 0; padding: 0;">J'accepte que mes données soient utilisées pour être recontacté(e).</label>
+						</div>
+					</div>
                     <button type="submit" class="btn-submit">Envoyer le message</button>
                 </form>
             </div>
