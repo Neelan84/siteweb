@@ -1043,27 +1043,6 @@ footer {
     }
 }
 
-/* Groupe checkbox */
-.checkbox-group label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.95rem;
-  cursor: pointer;
-}
-
-/* Empêche la checkbox de prendre toute la largeur */
-.checkbox-group input[type="checkbox"] {
-  width: auto !important;
-  margin: 0;
-  flex-shrink: 0;
-}
-
-/* Texte aligné */
-.checkbox-group span {
-  line-height: 1.4;
-}
-
 .contact-email {
     display: inline;       /* le lien ne prend que la largeur du texte */
     pointer-events: auto;
@@ -1086,6 +1065,30 @@ footer {
   }
 }
 
+/* CHECKBOX - Solution avec wrapper */
+.checkbox-wrapper {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+}
 
+.checkbox-wrapper input[type="checkbox"] {
+    flex-shrink: 0 !important;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    margin: 3px 0 0 0 !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    accent-color: #2d6e4a !important;
+}
 
-
+.checkbox-wrapper label {
+    flex: 1 !important;
+    cursor: pointer !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
