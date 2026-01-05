@@ -11,17 +11,17 @@
     <!--UNE seule URL officielle :-->
     <link rel="canonical" href="https://tous-condeens.fr/">
 	<!--Taggage SEO :-->
-	<meta name="description" content="Collectif citoyen pour Condé-sur-Vesgre. Programme participatif, engagements locaux et élections municipales 	2026.">
+	<meta name="description" content="Collectif citoyen pour Condé-sur-Vesgre. Programme participatif, engagements locaux et élections municipales 2026.">
 
 	<!--Open Graph (partage Facebook / WhatsApp) :-->
-	<meta property="og:title" content="Condé-sur-Vesgre, c’est nous tous">
-	<meta property="og:description" content="Un projet citoyen pour l’avenir de Condé-sur-Vesgre – municipales 2026">
+	<meta property="og:title" content="Condé-sur-Vesgre, c'est nous tous">
+	<meta property="og:description" content="Un projet citoyen pour l'avenir de Condé-sur-Vesgre – municipales 2026">
 	<meta property="og:url" content="https://tous-condeens.fr/">
 	<meta property="og:type" content="website">
 
   	<!-- ✅ Twitter / X -->
   	<meta name="twitter:card" content="summary_large_image" />
-  	<meta name="twitter:title" content="Condé-sur-Vesgre, c’est nous tous" />
+  	<meta name="twitter:title" content="Condé-sur-Vesgre, c'est nous tous" />
   	<meta name="twitter:description"
         content="Collectif citoyen engagé pour Condé-sur-Vesgre – Municipales 2026." />
 		
@@ -33,7 +33,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Condé-sur-Vesgre, c’est nous tous",
+  "name": "Condé-sur-Vesgre, c'est nous tous",
   "url": "https://tous-condeens.fr",
   "address": {
     "@type": "PostalAddress",
@@ -156,7 +156,7 @@
                 <ul>
                     <li>Réduire la vitesse dans le village pour protéger tous les usagers</li>
                     <li>Sécuriser les déplacements des piétons et mieux équiper nos enfants</li>
-                    <li>Prévenir les risques et les incivilités grâce à la vidéo-protection, au dispositif des voisins vigilants et aux patrouilles de vacances</li>
+                    <li>Prévenir les risques et les inciviltés grâce à la vidéo-protection, au dispositif des voisins vigilants et aux patrouilles de vacances</li>
                 </ul>
             </div>
             
@@ -323,7 +323,7 @@
 					<div class="form-group">
 						<div style="display: flex; align-items: flex-start; gap: 12px;">
 							<input type="checkbox" id="consent" name="consent" required style="flex-shrink: 0; width: 18px; height: 18px; margin: 3px 0 0 0; padding: 0; cursor: pointer;">
-							<label for="consent" style="flex: 1; cursor: pointer; font-size: 0.95rem; line-height: 1.6; margin: 0; padding: 0;">J'accepte que mes données soient utilisées pour être recontacté(e).</label>
+							<label for="consent" style="flex: 1; cursor: pointer; font-size: 0.95rem; line-height: 1.6; margin: 0; padding: 0;">J'accepte que mes données soient utilisées pour être recontactée(e).</label>
 						</div>
 					</div>
                     <button type="submit" class="btn-submit">Envoyer le message</button>
@@ -332,6 +332,39 @@
         </div>
     </div>
 </section>
+
+<div class="header-message" id="open-meteo">
+    🌤️ Voir la météo à Condé-sur-Vesgre
+</div>
+
+<!-- POPUP MÉTÉO -->
+<div id="meteo-modal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" id="close-meteo">&times;</button>
+        
+        <div class="modal-body">
+            <h3 style="color:#2d6e4a; margin-bottom:1.5rem; text-align: center; font-size: 1.5rem;">
+                Météo à Condé-sur-Vesgre
+            </h3>
+            
+            <!-- Conditions actuelles -->
+            <h4 style="color: #2d6e4a; font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 1rem;">Conditions actuelles</h4>
+            <table class="meteo-table" id="meteo-current">
+                <tr>
+                    <th colspan="2">Chargement...</th>
+                </tr>
+            </table>
+
+            <!-- Prévisions -->
+            <h4 style="color: #2d6e4a; font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 1rem;">Prévisions 3 jours</h4>
+            <table class="meteo-table" id="meteo-forecast">
+                <tr>
+                    <th colspan="2">Chargement...</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
 
 <footer>
     <div class="container">
@@ -375,7 +408,7 @@
 			"Tous CONDÉENS !"<br></p>
 
 			<p><strong>Nature du site</strong><br>
-			Site d’information et de communication relatif à une démarche citoyenne
+			Site d'information et de communication relatif à une démarche citoyenne
 			dans le cadre des élections municipales de 2026.</p>
 
 			<p><strong>Responsable de la publication</strong><br>
@@ -407,22 +440,23 @@
 
 			<p>
 			Conformément au Règlement Général sur la Protection des Données (RGPD),
-			vous disposez d’un droit d’accès, de rectification et de suppression
+			vous disposez d'un droit d'accès, de rectification et de suppression
 			des données vous concernant.
-			Toute demande peut être adressée par email à l’adresse indiquée ci-dessus.
+			Toute demande peut être adressée par email à l'adresse indiquée ci-dessus.
 			</p>
 
 			<p><strong>Cookies</strong><br>
-			Ce site n’utilise pas de cookies de suivi ou de mesure d’audience.
-			Aucun cookie publicitaire n’est déposé.</p>
+			Ce site n'utilise pas de cookies de suivi ou de mesure d'audience.
+			Aucun cookie publicitaire n'est déposé.</p>
 
 			<p><strong>Propriété intellectuelle</strong><br>
-			L’ensemble des contenus présents sur ce site (textes, images, graphismes,
+			L'ensemble des contenus présents sur ce site (textes, images, graphismes,
 			logos) est la propriété du collectif citoyen, sauf mention contraire.
 			Toute reproduction ou utilisation sans autorisation est interdite.</p>
 
     </div>
 </div>
+
 <!-- Bouton Retour en Haut -->
 <button id="backToTopBtn" title="Retour en haut">↑</button>
 
@@ -482,5 +516,113 @@ backToTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 </script>
+
+<!-- SCRIPT MÉTÉO -->
+<script>
+    const apiKey = "cf59aa5d576b296eca4320b33d269da1";
+    const lat = 48.731;
+    const lon = 1.615;
+
+    const openMeteoBtn = document.getElementById("open-meteo");
+    const meteoModal = document.getElementById("meteo-modal");
+    const closeMeteoBtn = document.getElementById("close-meteo");
+
+    // Ouvrir modal
+    openMeteoBtn.addEventListener("click", () => {
+        meteoModal.style.display = "flex";
+    });
+
+    // Fermer modal
+    closeMeteoBtn.addEventListener("click", () => {
+        meteoModal.style.display = "none";
+    });
+
+    // Fermer en cliquant dehors
+    meteoModal.addEventListener("click", (e) => {
+        if (e.target === meteoModal) {
+            meteoModal.style.display = "none";
+        }
+    });
+
+    // Récupérer météo actuelle
+    async function loadCurrentWeather() {
+        try {
+            const response = await fetch(
+                `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=fr`
+            );
+            const data = await response.json();
+
+            const table = document.getElementById("meteo-current");
+            table.innerHTML = `
+                <tr>
+                    <td class="meteo-label">Température</td>
+                    <td class="meteo-value">${Math.round(data.main.temp)} °C</td>
+                </tr>
+                <tr>
+                    <td class="meteo-label">Ressenti</td>
+                    <td class="meteo-value">${Math.round(data.main.feels_like)} °C</td>
+                </tr>
+                <tr>
+                    <td class="meteo-label">Vent</td>
+                    <td class="meteo-value">${Math.round(data.wind.speed * 3.6)} km/h</td>
+                </tr>
+                <tr>
+                    <td class="meteo-label">Humidité</td>
+                    <td class="meteo-value">${data.main.humidity} %</td>
+                </tr>
+            `;
+        } catch (error) {
+            document.getElementById("meteo-current").innerHTML = 
+                `<tr><td colspan="2" style="color: #c33; text-align: center;">Erreur de chargement</td></tr>`;
+        }
+    }
+
+    // Récupérer prévisions
+    async function loadForecast() {
+        try {
+            const response = await fetch(
+                `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=fr`
+            );
+            const data = await response.json();
+
+            const days = {};
+            data.list.forEach(item => {
+                const date = item.dt_txt.split(" ")[0];
+                if (!days[date]) {
+                    days[date] = {
+                        min: item.main.temp_min,
+                        max: item.main.temp_max
+                    };
+                } else {
+                    days[date].min = Math.min(days[date].min, item.main.temp_min);
+                    days[date].max = Math.max(days[date].max, item.main.temp_max);
+                }
+            });
+
+            const labels = ["Aujourd'hui", "Demain", "Après-demain"];
+            const dates = Object.keys(days).slice(0, 3);
+
+            let html = "";
+            dates.forEach((date, i) => {
+                html += `
+                    <tr>
+                        <td class="meteo-label">${labels[i]}</td>
+                        <td class="meteo-value">${Math.round(days[date].min)}° / ${Math.round(days[date].max)}°</td>
+                    </tr>
+                `;
+            });
+
+            document.getElementById("meteo-forecast").innerHTML = html;
+        } catch (error) {
+            document.getElementById("meteo-forecast").innerHTML = 
+                `<tr><td colspan="2" style="color: #c33; text-align: center;">Erreur de chargement</td></tr>`;
+        }
+    }
+
+    // Charger au démarrage
+    loadCurrentWeather();
+    loadForecast();
+</script>
+
 </body>
 </html>
