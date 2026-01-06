@@ -797,14 +797,15 @@ footer {
 .modal-content {
     background-color: white;
     padding: 0;
-    border-radius: 12px;
+    border-radius: 12px; /* Tous les coins arrondis */
     width: 90%;
     max-width: 800px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     animation: modalFadeIn 0.3s;
-    max-height: 90vh;
-    overflow-y: auto;
 }
 
 .modal-content_mention {
@@ -832,11 +833,9 @@ footer {
 @keyframes modalFadeIn {
     from {
         opacity: 0;
-        transform: translateY(-50px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -871,6 +870,8 @@ footer {
     display: flex;
     gap: 2rem;
     align-items: flex-start;
+    overflow-y: auto; /* Scroll ici */
+    max-height: 90vh; /* Hauteur max pour le scroll */
 }
 
 .modal-body img {
