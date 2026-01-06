@@ -460,7 +460,19 @@
 <!-- Bouton Retour en Haut -->
 <button id="backToTopBtn" title="Retour en haut">↑</button>
 
-<style>
+<!-- Supprimez ce script inline pour le bouton Retour en haut -->
+<!-- <script>
+const backToTopBtn = document.getElementById('backToTopBtn');
+window.addEventListener('scroll', () => {
+    backToTopBtn.classList.toggle('show', window.pageYOffset > 300);
+});
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script> -->
+
+<!-- Supprimez ce style inline pour le bouton Retour en haut (déplacez-le vers css/style.css) -->
+<!-- <style>
 #backToTopBtn {
     position: fixed;
     bottom: 30px;
@@ -505,20 +517,10 @@
         height: 45px;
     }
 }
-</style>
+</style> -->
 
-<script>
-const backToTopBtn = document.getElementById('backToTopBtn');
-window.addEventListener('scroll', () => {
-    backToTopBtn.classList.toggle('show', window.pageYOffset > 300);
-});
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-</script>
-
-<!-- SCRIPT MÉTÉO -->
-<script>
+<!-- Supprimez ce script inline pour la météo -->
+<!-- <script>
     const apiKey = "cf59aa5d576b296eca4320b33d269da1";
     const lat = 48.731;
     const lon = 1.615;
@@ -622,7 +624,7 @@ backToTopBtn.addEventListener('click', () => {
     // Charger au démarrage
     loadCurrentWeather();
     loadForecast();
-</script>
+</script> -->
 
 </body>
 </html>

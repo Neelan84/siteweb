@@ -159,7 +159,7 @@ nav a:hover {
     margin: 0 auto;
     padding: 0 2rem;
 }
-
+ 
 .hero-badge {
     display: inline-block;
     background: linear-gradient(90deg, var(--secondary) 0%, rgba(16,185,129,0.8) 100%);

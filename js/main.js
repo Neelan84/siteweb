@@ -224,4 +224,137 @@ document.addEventListener('DOMContentLoaded', function() {
 				legalModal.style.display = "none";
 			}
 		});
+
+
+    // Script du bouton Retour en haut (déplacé ici avec vérification)
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            backToTopBtn.classList.toggle('show', window.pageYOffset > 300);
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // Script de la météo (déplacé ici avec vérifications)
+    const apiKey = "cf59aa5d576b296eca4320b33d269da1";
+    const lat = 48.731;
+    const lon = 1.615;
+    const openMeteoBtn = document.getElementById("open-meteo");
+    const meteoModal = document.getElementById("meteo-modal");
+    const closeMeteoBtn = document.getElementById("close-meteo");
+
+    if (openMeteoBtn && meteoModal && closeMeteoBtn) {
+        // Ouvrir modal
+        openMeteoBtn.addEventListener("click", () => {
+            meteoModal.style.display = "flex";
+        });
+
+        // Fermer modal
+        closeMeteoBtn.addEventListener("click", () => {
+            meteoModal.style.display = "none";
+        });
+
+        // Fermer en cliquant dehors
+        meteoModal.addEventListener("click", (e) => {
+            if (e.target === meteoModal) {
+                meteoModal.style.display = "none";
+            }
+        });
+
+        // Récupérer météo actuelle
+        async function loadCurrentWeather() {
+            try {
+                const response = await fetch(
+                    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=fr`
+                );
+                const data = await response.json();
+
+                const table = document.getElementById("meteo-current");
+                if (table) {
+                    table.innerHTML = `
+                        <tr>
+                            <td class="meteo-label">Température</td>
+                            <td class="meteo-value">${Math.round(data.main.temp)} °C</td>
+                        </tr>
+                        <tr>
+                            <td class="meteo-label">Ressenti</td>
+                            <td class="meteo-value">${Math.round(data.main.feels_like)} °C</td>
+                        </tr>
+                        <tr>
+                            <td class="meteo-label">Vent</td>
+                            <td class="meteo-value">${Math.round(data.wind.speed * 3.6)} km/h</td>
+                        </tr>
+                        <tr>
+                            <td class="meteo-label">Humidité</td>
+                            <td class="meteo-value">${data.main.humidity} %</td>
+                        </tr>
+                    `;
+                }
+            } catch (error) {
+                console.log('Erreur météo actuelle:', error); // Debug ajouté
+                const table = document.getElementById("meteo-current");
+                if (table) {
+                    table.innerHTML = 
+                        `<tr><td colspan="2" style="color: #c33; text-align: center;">Erreur de chargement</td></tr>`;
+                }
+            }
+        }
+
+        // Récupérer prévisions
+        async function loadForecast() {
+            try {
+                const response = await fetch(
+                    `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=fr`
+                );
+                const data = await response.json();
+
+                const days = {};
+                data.list.forEach(item => {
+                    const date = item.dt_txt.split(" ")[0];
+                    if (!days[date]) {
+                        days[date] = {
+                            min: item.main.temp_min,
+                            max: item.main.temp_max
+                        };
+                    } else {
+                        days[date].min = Math.min(days[date].min, item.main.temp_min);
+                        days[date].max = Math.max(days[date].max, item.main.temp_max);
+                    }
+                });
+
+                const labels = ["Aujourd'hui", "Demain", "Après-demain"];
+                const dates = Object.keys(days).slice(0, 3);
+
+                let html = "";
+                dates.forEach((date, i) => {
+                    html += `
+                        <tr>
+                            <td class="meteo-label">${labels[i]}</td>
+                            <td class="meteo-value">${Math.round(days[date].min)}° / ${Math.round(days[date].max)}°</td>
+                        </tr>
+                    `;
+                });
+
+                const forecastTable = document.getElementById("meteo-forecast");
+                if (forecastTable) {
+                    forecastTable.innerHTML = html;
+                }
+            } catch (error) {
+                console.log('Erreur prévisions météo:', error); // Debug ajouté
+                const forecastTable = document.getElementById("meteo-forecast");
+                if (forecastTable) {
+                    forecastTable.innerHTML = 
+                        `<tr><td colspan="2" style="color: #c33; text-align: center;">Erreur de chargement</td></tr>`;
+                }
+            }
+        }
+
+        // Charger au démarrage
+        loadCurrentWeather();
+        loadForecast();
+    }
 });
+
+// Supprimez les scripts dupliqués à la fin du fichier (bouton et météo)
