@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
             text: 'Sandrine DROZDOWSKI - 51 ans - responsable RH à la "Maison des Sages", association spécialisée dans les habitats partagés pour les personnes atteintes de la maladie d\'Alzheimer.\nMaman de deux jeunes adultes et d\'un adolescent de 13 ans, j\'habite à Condé sur Vesgre depuis dix ans maintenant et je participe activement à la vie associative de la commune en tant que secrétaire et coach au club de football du village, ainsi que bénévole au comité des fêtes.\nJ\'ai rejoint une équipe dont la vision est proche de la mienne : avancer ensemble pour les Condéens, dans un esprit de transparence, d\'écoute et de communication, des valeurs qui guident mon engagement au quotidien.\n« Agir plutôt que critiquer et construire ensemble l\'avenir de notre commune. »'
         },
         { 
-            photo: 'photos/olivier.jpeg', 
+            photo: 'photos/olivier.jpeg',
             text: 'Olivier DERBESSE - 46 ans - Directeur Informatique au sein d\'une collectivité territoriale. \nEngagé depuis toujours pour le droit commun (ex-président des Représentants des Parents d\'Elèves du Collège de Houdan), j\'ai rejoint une équipe de Condéens motivés, sans étiquette, qui veulent simplement faire vivre notre village.\nMes atouts ? Pas un politique, mais un représentant impartial, à l\'écoute de tous. Mon expérience associative m\'a appris à agir concrètement pour le lien social.\n« La politique vous éloigne ? Nous, on la rapproche. Rejoignez une liste transparente, citoyenne et tournée vers l\'action – pour Condé, par les Condéens.» '
         },
         { 
