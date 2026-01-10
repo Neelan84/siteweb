@@ -34,8 +34,7 @@ body {
 /* ===== HEADER & NAVIGATION ===== */
 
 header {
-    background: rgba(255,255,255,0.98);
-    backdrop-filter: blur(10px);
+    background: white;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
@@ -137,13 +136,14 @@ nav a:hover {
 
 .hero {
     background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-    padding: 180px 2rem 120px;
+    padding: 250px 2rem 120px;
     text-align: left;
     position: relative;
     overflow: hidden;
     min-height: 85vh;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .hero::before {
