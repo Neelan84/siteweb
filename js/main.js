@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const trombinoscopeData = [
         { 
             photo: 'photos/emilie.jpeg', 
-            text: 'Emilie BOISMAL - 45 ans - Assistante familiale.\nYvelinoise depuis toujours, j\'habite à Condé-sur-Vesgre depuis 14 ans. J\'y ai construit ma vie et je suis profondément attachée à mon village et à sa forêt, que je parcours quotidiennement.\nMon engagement professionnel et associatif m\'a appris le sens des responsabilités, de l\'écoute et du collectif. J\'ai rejoint ce projet, convaincue que la politique locale peut se mener autrement : avec de la présence, du dialogue et beaucoup de bon sens.\n« Je crois que Condé possède déjà tout ce dont on a besoin. Mon envie est simple : aider à révéler ces richesses et les mettre en valeur, avec les habitants, pour l\'avenir du village. »'
+            text: 'Emilie BOISMAL -<strong> Tête de liste pour la liste "Tous Condéens!"</strong> - 45 ans - Assistante familiale.\nYvelinoise depuis toujours, j\'habite à Condé-sur-Vesgre depuis 14 ans. J\'y ai construit ma vie et je suis profondément attachée à mon village et à sa forêt, que je parcours quotidiennement.\nMon engagement professionnel et associatif m\'a appris le sens des responsabilités, de l\'écoute et du collectif. J\'ai rejoint ce projet, convaincue que la politique locale peut se mener autrement : avec de la présence, du dialogue et beaucoup de bon sens.\n« Je crois que Condé possède déjà tout ce dont on a besoin. Mon envie est simple : aider à révéler ces richesses et les mettre en valeur, avec les habitants, pour l\'avenir du village. »'
         },
         { 
             photo: 'photos/luc.jpeg', 
