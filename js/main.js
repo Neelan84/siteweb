@@ -32,6 +32,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // PWA install prompt (Android)
+    let deferredPrompt;
+    const installBtn = document.createElement('button');
+    installBtn.textContent = 'Installer l\'application';
+    installBtn.style.position = 'fixed';
+    installBtn.style.bottom = '30px';
+    installBtn.style.right = '30px';
+    installBtn.style.zIndex = '9999';
+    installBtn.style.padding = '1em 1.5em';
+    installBtn.style.background = '#222';
+    installBtn.style.color = '#fff';
+    installBtn.style.border = 'none';
+    installBtn.style.borderRadius = '8px';
+    installBtn.style.boxShadow = '0 2px 8px rgba(0,0,0,0.2)';
+    installBtn.style.fontSize = '1.1em';
+    installBtn.style.display = 'none';
+    document.body.appendChild(installBtn);
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        installBtn.style.display = 'block';
+    });
+
+    installBtn.addEventListener('click', async () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            if (outcome === 'accepted') {
+                installBtn.style.display = 'none';
+            }
+            deferredPrompt = null;
+        }
+    });
+
     // Animations au scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
