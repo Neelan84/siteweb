@@ -111,16 +111,16 @@ document.addEventListener('DOMContentLoaded', function() {
     popup.appendChild(btnNon);
     document.body.appendChild(popup);
 
+    // Fonction utilitaire pour savoir si l'app est déjà installée (standalone)
+    function isStandalone() {
+        return (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone);
+    }
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
-            // N'affiche pas le prompt si déjà installé (standalone)
-            function isStandalone() {
-                return (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone);
-            }
-            if (isAndroidMobile() && !isStandalone()) {
-                popup.style.display = 'block';
-            }
+        if (isAndroidMobile() && !isStandalone()) {
+            popup.style.display = 'block';
+        }
     });
 
     // Afficher le prompt même si beforeinstallprompt n'est pas déclenché
