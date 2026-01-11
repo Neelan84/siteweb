@@ -1,10 +1,12 @@
 const CACHE_NAME = 'conde-pwa-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/css/style.css',
-  '/js/main.js',
-  '/manifest.json',
+  '/siteweb/',
+  '/siteweb/index.html',
+  '/siteweb/css/style.css',
+  '/siteweb/js/main.js',
+  '/siteweb/manifest.json',
+  '/siteweb/icons/icon-192.png',
+  '/siteweb/icons/icon-512.png',
   // Ajoutez d'autres fichiers à mettre en cache ici
 ];
 
