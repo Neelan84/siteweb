@@ -68,7 +68,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // PWA install prompt (Android) avec choix Oui / Non
+
+    // PWA install prompt (Android) toujours affiché
+    function isAndroid() {
+        return /android/i.test(window.navigator.userAgent);
+    }
     let deferredPrompt;
     const popup = document.createElement('div');
     popup.style.position = 'fixed';
@@ -107,8 +111,15 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
-        popup.style.display = 'block';
+        if (isAndroid()) {
+            popup.style.display = 'block';
+        }
     });
+
+    // Afficher le prompt même si beforeinstallprompt n'est pas déclenché
+    if (isAndroid()) {
+        popup.style.display = 'block';
+    }
 
     btnOui.addEventListener('click', async () => {
         if (deferredPrompt) {
@@ -118,6 +129,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 popup.style.display = 'none';
             }
             deferredPrompt = null;
+        } else {
+            popup.style.display = 'none';
         }
     });
     btnNon.addEventListener('click', () => {
