@@ -32,39 +32,61 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // PWA install prompt (Android)
+    // PWA install prompt (Android) avec choix Oui / Non
     let deferredPrompt;
-    const installBtn = document.createElement('button');
-    installBtn.textContent = 'Installer l\'application';
-    installBtn.style.position = 'fixed';
-    installBtn.style.bottom = '30px';
-    installBtn.style.right = '30px';
-    installBtn.style.zIndex = '9999';
-    installBtn.style.padding = '1em 1.5em';
-    installBtn.style.background = '#222';
-    installBtn.style.color = '#fff';
-    installBtn.style.border = 'none';
-    installBtn.style.borderRadius = '8px';
-    installBtn.style.boxShadow = '0 2px 8px rgba(0,0,0,0.2)';
-    installBtn.style.fontSize = '1.1em';
-    installBtn.style.display = 'none';
-    document.body.appendChild(installBtn);
+    const popup = document.createElement('div');
+    popup.style.position = 'fixed';
+    popup.style.bottom = '30px';
+    popup.style.right = '30px';
+    popup.style.zIndex = '9999';
+    popup.style.background = '#222';
+    popup.style.color = '#fff';
+    popup.style.padding = '1.5em 2em';
+    popup.style.borderRadius = '12px';
+    popup.style.boxShadow = '0 2px 12px rgba(0,0,0,0.25)';
+    popup.style.display = 'none';
+    popup.style.textAlign = 'center';
+    popup.innerHTML = `Voulez-vous installer l'application ?<br><br>`;
+    const btnOui = document.createElement('button');
+    btnOui.textContent = 'Oui';
+    btnOui.style.margin = '0 1em 0 0';
+    btnOui.style.padding = '0.5em 1.2em';
+    btnOui.style.background = '#4caf50';
+    btnOui.style.color = '#fff';
+    btnOui.style.border = 'none';
+    btnOui.style.borderRadius = '6px';
+    btnOui.style.fontSize = '1em';
+    const btnNon = document.createElement('button');
+    btnNon.textContent = 'Non';
+    btnNon.style.padding = '0.5em 1.2em';
+    btnNon.style.background = '#f44336';
+    btnNon.style.color = '#fff';
+    btnNon.style.border = 'none';
+    btnNon.style.borderRadius = '6px';
+    btnNon.style.fontSize = '1em';
+    popup.appendChild(btnOui);
+    popup.appendChild(btnNon);
+    document.body.appendChild(popup);
 
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
-        installBtn.style.display = 'block';
+        popup.style.display = 'block';
     });
 
-    installBtn.addEventListener('click', async () => {
+    btnOui.addEventListener('click', async () => {
         if (deferredPrompt) {
             deferredPrompt.prompt();
             const { outcome } = await deferredPrompt.userChoice;
             if (outcome === 'accepted') {
-                installBtn.style.display = 'none';
+                popup.style.display = 'none';
             }
             deferredPrompt = null;
         }
+    });
+    btnNon.addEventListener('click', () => {
+        popup.style.display = 'none';
+        deferredPrompt = null;
     });
 
     // Animations au scroll
