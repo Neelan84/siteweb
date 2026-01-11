@@ -1,3 +1,39 @@
+    // Affichage d'une bannière d'aide pour installation iPhone (Safari)
+    function isIos() {
+        return /iphone|ipad|ipod/i.test(window.navigator.userAgent);
+    }
+    function isInStandaloneMode() {
+        return ('standalone' in window.navigator) && window.navigator.standalone;
+    }
+    if (isIos() && !isInStandaloneMode()) {
+        const iosBanner = document.createElement('div');
+        iosBanner.style.position = 'fixed';
+        iosBanner.style.bottom = '30px';
+        iosBanner.style.left = '50%';
+        iosBanner.style.transform = 'translateX(-50%)';
+        iosBanner.style.zIndex = '9999';
+        iosBanner.style.background = '#222';
+        iosBanner.style.color = '#fff';
+        iosBanner.style.padding = '1.5em 2em';
+        iosBanner.style.borderRadius = '12px';
+        iosBanner.style.boxShadow = '0 2px 12px rgba(0,0,0,0.25)';
+        iosBanner.style.textAlign = 'center';
+        iosBanner.style.fontSize = '1.1em';
+        iosBanner.innerHTML = `Pour installer l'application sur votre iPhone :<br>1. Touchez <span style="font-size:1.3em">&#x1F5D2;&#xFE0F;</span> ou <span style="font-size:1.3em">&#x2191;</span> en bas de Safari<br>2. Puis "Sur l'écran d'accueil"`;
+        const closeIos = document.createElement('button');
+        closeIos.textContent = 'OK';
+        closeIos.style.marginTop = '1em';
+        closeIos.style.padding = '0.5em 1.2em';
+        closeIos.style.background = '#4caf50';
+        closeIos.style.color = '#fff';
+        closeIos.style.border = 'none';
+        closeIos.style.borderRadius = '6px';
+        closeIos.style.fontSize = '1em';
+        closeIos.addEventListener('click', () => iosBanner.remove());
+        iosBanner.appendChild(document.createElement('br'));
+        iosBanner.appendChild(closeIos);
+        document.body.appendChild(iosBanner);
+    }
 document.addEventListener('DOMContentLoaded', function() {
     const toggle = document.getElementById('menuToggle');
     const menu = document.getElementById('navMenu');
