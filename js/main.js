@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         iosBanner.appendChild(closeIos);
         document.body.appendChild(iosBanner);
     }
-document.addEventListener('DOMContentLoaded', function() {
     const toggle = document.getElementById('menuToggle');
     const menu = document.getElementById('navMenu');
 
@@ -451,4 +450,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Supprimez les scripts dupliqués à la fin du fichier (bouton et météo)
