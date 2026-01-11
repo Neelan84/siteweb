@@ -1043,7 +1043,7 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     nav {
         display: flex;
         justify-content: flex-start;
