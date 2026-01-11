@@ -1216,11 +1216,11 @@ footer {
 
     .valeurs-title-mobile {
         display: block;
-        font-size: 1.5rem;
-        font-weight: 600;
+        font-size: 2rem;
+        font-weight: 700;
         color: var(--primary);
         text-align: center;
-        margin-top: 2rem;
+        margin-top: 3rem;
         margin-bottom: 1rem;
     }
 
@@ -1257,6 +1257,10 @@ footer {
     .valeurs-text-mobile li {
         margin-bottom: 1rem;
         line-height: 1.6;
+    }
+
+    .equipe h2 {
+        margin-top: 0;
     }
 }
 
