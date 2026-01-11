@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
     // Affichage d'une bannière d'aide pour installation iPhone (Safari)
     function isIos() {
         return /iphone|ipad|ipod/i.test(window.navigator.userAgent);
