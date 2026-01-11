@@ -73,6 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function isAndroid() {
         return /android/i.test(window.navigator.userAgent);
     }
+        function isAndroidMobile() {
+            return /android/i.test(window.navigator.userAgent) && /mobile/i.test(window.navigator.userAgent);
+        }
     let deferredPrompt;
     const popup = document.createElement('div');
     popup.style.position = 'fixed';
@@ -111,13 +114,13 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
-        if (isAndroid()) {
+            if (isAndroidMobile()) {
             popup.style.display = 'block';
         }
     });
 
     // Afficher le prompt même si beforeinstallprompt n'est pas déclenché
-    if (isAndroid()) {
+        if (isAndroidMobile()) {
         popup.style.display = 'block';
     }
 
