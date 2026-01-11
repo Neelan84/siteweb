@@ -114,15 +114,19 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
-            if (isAndroidMobile()) {
-            popup.style.display = 'block';
-        }
+            // N'affiche pas le prompt si déjà installé (standalone)
+            function isStandalone() {
+                return (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone);
+            }
+            if (isAndroidMobile() && !isStandalone()) {
+                popup.style.display = 'block';
+            }
     });
 
     // Afficher le prompt même si beforeinstallprompt n'est pas déclenché
-        if (isAndroidMobile()) {
-        popup.style.display = 'block';
-    }
+        if (isAndroidMobile() && !isStandalone()) {
+            popup.style.display = 'block';
+        }
 
     btnOui.addEventListener('click', async () => {
         if (deferredPrompt) {
