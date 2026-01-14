@@ -268,8 +268,20 @@ document.addEventListener('DOMContentLoaded', function() {
         trombinoscopeData.forEach((person, index) => {
             const firstParagraph = getFirstParagraph(person.text);
 
+            function openPersonModal() {
+                modalPhoto.src = person.photo;
+                modalPhoto.alt = '';
+                modalText.innerHTML = formatFullText(person.text);
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+
             const card = document.createElement('div');
             card.className = 'trombinoscope-card';
+            card.tabIndex = 0;
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-haspopup', 'dialog');
+            card.setAttribute('aria-label', 'Ouvrir le descriptif');
             card.innerHTML = `
                 <img src="${person.photo}" alt="">
                 <div class="trombinoscope-card-content">
@@ -278,12 +290,12 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
 
             // Ajouter l'événement de clic
-            card.addEventListener('click', () => {
-                modalPhoto.src = person.photo;
-                modalPhoto.alt = '';
-                modalText.innerHTML = formatFullText(person.text);
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
+            card.addEventListener('click', openPersonModal);
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openPersonModal();
+                }
             });
 
             trombinoscopeGrid.appendChild(card);
