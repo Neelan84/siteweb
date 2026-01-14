@@ -595,6 +595,32 @@ h2 {
     align-items: flex-start;
 }
 
+.trombinoscope-card:focus-visible {
+    outline: 3px solid rgba(198, 116, 36, 0.55);
+    outline-offset: 3px;
+}
+
+.trombinoscope-card::after {
+    content: "Cliquer ici";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background: rgba(180, 180, 180, 0.82);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.05rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
 .trombinoscope-card::before {
     content: '';
     position: absolute;
@@ -611,6 +637,33 @@ h2 {
     transform: translateY(-8px);
     box-shadow: 0 12px 35px rgba(37,99,235,0.2);
     border-left-color: var(--secondary);
+}
+
+.trombinoscope-card:hover::after,
+.trombinoscope-card:focus-visible::after {
+    opacity: 1;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .trombinoscope-card {
+        padding-bottom: 3.2rem;
+    }
+
+    .trombinoscope-card::after {
+        content: "🔍";
+        inset: auto;
+        opacity: 1;
+        right: 12px;
+        bottom: 6px;
+        width: auto;
+        height: auto;
+        display: block;
+        padding: 0.4rem 0.55rem;
+        border-radius: 999px;
+        font-size: 0.95rem;
+        line-height: 1;
+        background: rgba(140, 140, 140, 0.9);
+    }
 }
 
 .trombinoscope-card img {
