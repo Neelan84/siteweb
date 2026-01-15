@@ -1325,6 +1325,10 @@ footer {
         padding-bottom: 3.2rem;
     }
 
+    .trombinoscope-card::after {
+        display: none;
+    }
+
     .mobile-loupe {
         display: block;
     }
