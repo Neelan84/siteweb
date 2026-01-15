@@ -668,15 +668,10 @@ h2 {
 
 /* ===== TROMBINOSCOPE — centered overlay badge on image (desktop only) ===== */
 @media (hover: hover) and (pointer: fine) {
-  .trombinoscope-card {
-    position: relative; /* déjà présent mais on le réaffirme */
-  }
-
   .trombinoscope-card img {
     transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms, filter 220ms, opacity 200ms;
     cursor: pointer;
     display: block;
-    backface-visibility: hidden;
     transform-origin: center center;
   }
 
