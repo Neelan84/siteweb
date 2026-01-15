@@ -601,7 +601,7 @@ h2 {
 }
 
 .trombinoscope-card::after {
-    content: "Cliquer ici";
+    content: "🔍";
     position: absolute;
     inset: 0;
     z-index: 3;
@@ -641,30 +641,10 @@ h2 {
 
 .trombinoscope-card:hover::after,
 .trombinoscope-card:focus-visible::after {
+    content: "Cliquer ici";
     opacity: 1;
 }
 
-@media (hover: none) and (pointer: coarse) {
-    .trombinoscope-card {
-        padding-bottom: 3.2rem;
-    }
-
-    .trombinoscope-card::after {
-        content: "🔍";
-        inset: auto;
-        opacity: 1;
-        right: 12px;
-        bottom: 6px;
-        width: auto;
-        height: auto;
-        display: block;
-        padding: 0.4rem 0.55rem;
-        border-radius: 999px;
-        font-size: 0.95rem;
-        line-height: 1;
-        background: rgba(140, 140, 140, 0.9);
-    }
-}
 
 .trombinoscope-card img {
     width: 120px;
