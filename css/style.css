@@ -318,6 +318,62 @@ h2 {
 
 .collectif-photo {
     width: 100%;
+    overflow: visible;
+}
+
+.img-wrapper {
+    position: relative;
+}
+
+.zoom-icon {
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zoom-icon:hover {
+    opacity: 1;
+}
+
+.collectif-photo img {
+    transition: all 0.3s ease;
+}
+
+.equipe-photo img {
+    transition: all 0.3s ease;
+}
+
+.collectif-photo img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 1000;
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    cursor: zoom-out;
+}
+
+.equipe-photo img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+    z-index: 1000;
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    cursor: zoom-out;
 }
 
 .collectif-text p {

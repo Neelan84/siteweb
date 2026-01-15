@@ -35,6 +35,66 @@ document.addEventListener('DOMContentLoaded', function() {
         iosBanner.appendChild(closeIos);
         document.body.appendChild(iosBanner);
     }
+
+    function toggleZoom(img) {
+        const isZoomed = img.classList.contains('zoomed');
+        if (isZoomed) {
+            img.classList.remove('zoomed');
+            const overlay = document.querySelector('.zoom-overlay');
+            if (overlay) overlay.remove();
+        } else {
+            img.classList.add('zoomed');
+            const overlay = document.createElement('div');
+            overlay.className = 'zoom-overlay';
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.background = 'rgba(0,0,0,0.5)';
+            overlay.style.zIndex = '999';
+            overlay.style.cursor = 'pointer';
+            overlay.addEventListener('click', function() {
+                img.classList.remove('zoomed');
+                overlay.remove();
+            });
+            const closeBtn = document.createElement('button');
+            closeBtn.textContent = '×';
+            closeBtn.style.position = 'absolute';
+            closeBtn.style.top = '10px';
+            closeBtn.style.right = '10px';
+            closeBtn.style.fontSize = '50px';
+            closeBtn.style.color = 'white';
+            closeBtn.style.background = 'rgba(0,0,0,0.7)';
+            closeBtn.style.border = 'none';
+            closeBtn.style.borderRadius = '50%';
+            closeBtn.style.width = '50px';
+            closeBtn.style.height = '50px';
+            closeBtn.style.display = 'flex';
+            closeBtn.style.alignItems = 'center';
+            closeBtn.style.justifyContent = 'center';
+            closeBtn.style.cursor = 'pointer';
+            closeBtn.style.zIndex = '1001';
+            closeBtn.addEventListener('click', function() {
+                img.classList.remove('zoomed');
+                overlay.remove();
+            });
+            overlay.appendChild(closeBtn);
+        }
+    }
+
+    // Attacher les événements de clic aux images
+    document.querySelectorAll('.collectif-photo img, .equipe-photo img').forEach(img => {
+        img.addEventListener('click', () => toggleZoom(img));
+    });
+
+    // Fermer le zoom en cliquant ailleurs
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.collectif-photo img, .equipe-photo img')) {
+            document.querySelectorAll('.collectif-photo img.zoomed, .equipe-photo img.zoomed').forEach(img => img.classList.remove('zoomed'));
+        }
+    });
+
     const toggle = document.getElementById('menuToggle');
     const menu = document.getElementById('navMenu');
 
@@ -419,7 +479,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     `;
                 }
             } catch (error) {
-                console.log('Erreur météo actuelle:', error); // Debug ajouté
                 const table = document.getElementById("meteo-current");
                 if (table) {
                     table.innerHTML = 
@@ -468,7 +527,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     forecastTable.innerHTML = html;
                 }
             } catch (error) {
-                console.log('Erreur prévisions météo:', error); // Debug ajouté
                 const forecastTable = document.getElementById("meteo-forecast");
                 if (forecastTable) {
                     forecastTable.innerHTML = 
