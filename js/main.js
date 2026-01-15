@@ -287,6 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="trombinoscope-card-content">
                     <p>${firstParagraph}</p>
                 </div>
+                <span class="mobile-loupe">🔍</span>
             `;
 
             // Ajouter l'événement de clic
