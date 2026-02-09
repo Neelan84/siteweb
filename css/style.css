@@ -1213,6 +1213,7 @@ footer {
         display: block;
         position: absolute;
         right: 2rem;
+        z-index: 10;
     }
 
     nav ul {
@@ -1226,6 +1227,7 @@ footer {
         margin-left: 0;
         display: none;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        z-index: 9;
     }
 
     nav ul.active {
@@ -1466,4 +1468,19 @@ footer {
     color: var(--text);
     font-size: 1.1rem;
     white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .video-section .section-intro {
+        white-space: normal;
+        font-size: 1rem;
+    }
+    
+    .video-section {
+        padding: 3rem 0;
+    }
+    
+    .video-section h2 {
+        font-size: 2rem;
+    }
 }
