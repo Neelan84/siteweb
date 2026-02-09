@@ -555,6 +555,7 @@ h2 {
 .equipe {
     background: white;
     color: var(--text);
+    padding-bottom: 50px; /* Réduit l'espace en dessous */
 }
 
 .equipe h2 {
@@ -1464,4 +1465,5 @@ footer {
     margin-bottom: 2rem;
     color: var(--text);
     font-size: 1.1rem;
+    white-space: nowrap;
 }
