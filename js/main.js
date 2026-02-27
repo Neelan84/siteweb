@@ -344,6 +344,7 @@ document.addEventListener('DOMContentLoaded', function() {
             card.setAttribute('aria-label', 'Ouvrir le descriptif');
             card.innerHTML = `
                 <img src="${person.photo}" alt="">
+                <span class="image-badge">Voir profil</span>
                 <div class="trombinoscope-card-content">
                     <p>${firstParagraph}</p>
                 </div>
